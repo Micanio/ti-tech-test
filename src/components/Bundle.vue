@@ -35,3 +35,18 @@ export default {
 
 
 </script>
+
+<style>
+.bundles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.bundle {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-basis: 30%;
+}
+</style>
