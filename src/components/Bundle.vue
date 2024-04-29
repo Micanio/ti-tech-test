@@ -9,6 +9,7 @@
                 </div>
                 <div class="duration">
                     <p><span class="label">Duration:</span> {{ bundle.duration_mins }} mins</p>
+                    <DurationEdit />
                 </div>
                 <div class="deadline">
                     <p><span class="label">Deadline:</span> {{ formatDate(bundle.deadline) }}</p>
@@ -26,11 +27,13 @@
 <script>
 import json from '../assets/bundles.json'
 import CoachEdit from './CoachEdit.vue'
+import DurationEdit from './DurationEdit.vue'
 
 export default {
     name: 'Bundle',
     components: {
-        CoachEdit
+        CoachEdit,
+        DurationEdit
     },
     data() {
         return {

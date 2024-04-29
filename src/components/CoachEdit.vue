@@ -8,6 +8,7 @@
             <option value="coach3"> hello test</option>
         </select>
         </label>
+        <button>Save</button>
     </div>
 </template>
 
