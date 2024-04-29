@@ -13,6 +13,7 @@
                 </div>
                 <div class="deadline">
                     <p><span class="label">Deadline:</span> {{ formatDate(bundle.deadline) }}</p>
+                    <DeadlineEdit />
                 </div>
             </div>
             <div class="session" v-for="session in bundle.sessions" :key="session.id">
@@ -28,12 +29,14 @@
 import json from '../assets/bundles.json'
 import CoachEdit from './CoachEdit.vue'
 import DurationEdit from './DurationEdit.vue'
+import DeadlineEdit from './DeadlineEdit.vue'
 
 export default {
     name: 'Bundle',
     components: {
         CoachEdit,
-        DurationEdit
+        DurationEdit,
+        DeadlineEdit
     },
     data() {
         return {
