@@ -19,6 +19,7 @@
             <div class="session" v-for="session in bundle.sessions" :key="session.id">
                 <h3>Session {{ session.id }}</h3>
                 <p>{{ formatDate(session.date) }} {{ session.type }} - {{ session.status.title }}</p>
+                <SessionEdit />
             </div>
             
         </div>
@@ -30,13 +31,15 @@ import json from '../assets/bundles.json'
 import CoachEdit from './CoachEdit.vue'
 import DurationEdit from './DurationEdit.vue'
 import DeadlineEdit from './DeadlineEdit.vue'
+import SessionEdit from './SessionEdit.vue'
 
 export default {
     name: 'Bundle',
     components: {
         CoachEdit,
         DurationEdit,
-        DeadlineEdit
+        DeadlineEdit,
+        SessionEdit
     },
     data() {
         return {
