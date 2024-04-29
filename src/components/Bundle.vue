@@ -11,7 +11,10 @@
             <div class="deadline">
                 <p>Deadline: {{ formatDate(bundle.deadline) }}</p>
             </div>
-            <div class="session"></div>
+            <div class="session" v-for="session in bundle.sessions" :key="session.id">
+                <h3>Session {{ session.id }}</h3>
+                <p>{{ formatDate(session.date) }} {{ session.type }} - {{ session.status.title }}</p>
+            </div>
         </div>
     </div>
 </template>
@@ -32,8 +35,13 @@ export default {
         }
     },
     methods: {
+        
         formatDate(date) {
-            return new Date(date).toLocaleDateString()
+            if (date === null) {
+                return
+            } else {
+                return new Date(date).toLocaleDateString()
+            }    
         }
     }
 }
