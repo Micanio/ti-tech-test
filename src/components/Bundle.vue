@@ -4,11 +4,11 @@
             <h2>{{ bundle.user.first_name }} {{ bundle.user.last_name }}</h2>
             <div class="bundle-info">
                 <div class="coach">
-                    <p><span class="label">Coach:</span> {{ bundle.coach.first_name }} {{ bundle.coach.last_name }}</p>
+                    <p><span class="label">Coach:</span> <span id="coach-name">{{ bundle.coach.first_name }} {{ bundle.coach.last_name }}</span></p>
                     <CoachEdit />
                 </div>
                 <div class="duration">
-                    <p><span class="label">Duration:</span> {{ bundle.duration_mins }} mins</p>
+                    <p><span class="label">Duration:</span> <span id="duration">{{ bundle.duration_mins }}</span> mins</p>
                     <DurationEdit />
                 </div>
                 <div class="deadline">

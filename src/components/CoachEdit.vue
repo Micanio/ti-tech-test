@@ -3,12 +3,12 @@
     <div class="coach-edit" v-if="showCoachEdit">
         <label for="coach">
         <select name="coach" id="coach">
-            <option value="coach1">Laura McGregor</option>
-            <option value="coach2">Lana Orton</option>
-            <option value="coach3"> hello test</option>
+            <option value="Laura McGregor">Laura McGregor</option>
+            <option value="Lana Orton">Lana Orton</option>
+            <option value="hello test"> hello test</option>
         </select>
         </label>
-        <button>Save</button>
+        <button @click="saveCoach">Save</button>
     </div>
 </template>
 
@@ -19,6 +19,14 @@ export default {
     data() {
         return {
             showCoachEdit: false
+        }
+    },
+    methods: {
+        saveCoach() {
+            var newCoach = document.getElementById('coach').value
+            document.getElementById('coach-name').innerText = newCoach
+            this.showCoachEdit = false
+            console.log(newCoach)
         }
     }
 }
