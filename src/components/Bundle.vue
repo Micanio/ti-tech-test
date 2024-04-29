@@ -9,7 +9,7 @@
                 <p>Duration: {{ bundle.duration_mins }} mins</p>
             </div>
             <div class="deadline">
-                <p>Deadline: {{ bundle.deadline }}</p>
+                <p>Deadline: {{ formatDate(bundle.deadline) }}</p>
             </div>
             <div class="session"></div>
         </div>
@@ -29,6 +29,11 @@ export default {
     computed: {
         bundles() {
             return this.bundle
+        }
+    },
+    methods: {
+        formatDate(date) {
+            return new Date(date).toLocaleDateString()
         }
     }
 }
