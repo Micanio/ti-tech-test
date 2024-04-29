@@ -2,19 +2,22 @@
     <div class="bundles">
         <div class="bundle" v-for="bundle in bundles" :key="bundle.id">
             <h2>{{ bundle.user.first_name }} {{ bundle.user.last_name }}</h2>
-            <div class="coach">
-                <p>Coach: {{ bundle.coach.first_name }} {{ bundle.coach.last_name }}</p>
-            </div>
-            <div class="duration">
-                <p>Duration: {{ bundle.duration_mins }} mins</p>
-            </div>
-            <div class="deadline">
-                <p>Deadline: {{ formatDate(bundle.deadline) }}</p>
+            <div class="bundle-info">
+                <div class="coach">
+                    <p><span class="label">Coach:</span> {{ bundle.coach.first_name }} {{ bundle.coach.last_name }}</p>
+                </div>
+                <div class="duration">
+                    <p><span class="label">Duration:</span> {{ bundle.duration_mins }} mins</p>
+                </div>
+                <div class="deadline">
+                    <p><span class="label">Deadline:</span> {{ formatDate(bundle.deadline) }}</p>
+                </div>
             </div>
             <div class="session" v-for="session in bundle.sessions" :key="session.id">
                 <h3>Session {{ session.id }}</h3>
                 <p>{{ formatDate(session.date) }} {{ session.type }} - {{ session.status.title }}</p>
             </div>
+            
         </div>
     </div>
 </template>
@@ -62,4 +65,18 @@ export default {
     border-radius: 5px;
     flex-basis: 30%;
 }
+h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.bundle-info {
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+span.label {
+    font-weight: bold;
+}
+
 </style>
