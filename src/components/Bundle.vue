@@ -5,6 +5,7 @@
             <div class="bundle-info">
                 <div class="coach">
                     <p><span class="label">Coach:</span> {{ bundle.coach.first_name }} {{ bundle.coach.last_name }}</p>
+                    <CoachEdit />
                 </div>
                 <div class="duration">
                     <p><span class="label">Duration:</span> {{ bundle.duration_mins }} mins</p>
@@ -24,9 +25,13 @@
 
 <script>
 import json from '../assets/bundles.json'
+import CoachEdit from './CoachEdit.vue'
 
 export default {
     name: 'Bundle',
+    components: {
+        CoachEdit
+    },
     data() {
         return {
             bundle: json
