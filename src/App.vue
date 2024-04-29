@@ -1,15 +1,18 @@
 <template>
   <Header />
+  <Bundle />
 </template>
 
 <script>
 import Header from './components/Header.vue';
+import Bundle from './components/Bundle.vue';
 
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Bundle
   }
 }
 </script>
